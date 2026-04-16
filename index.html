@@ -33,9 +33,13 @@ body{font-family:var(--fc);background:#0f172a;min-height:100vh;display:flex;just
 .screen{display:none;animation:fadeUp .4s ease;}
 .screen.active{display:block;}
 @keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+@keyframes logoFloat{0%,100%{transform:translateY(0) rotate(-1deg)}50%{transform:translateY(-8px) rotate(1deg)}}
+@keyframes logoIn{from{opacity:0;transform:scale(.4) rotate(-10deg)}to{opacity:1;transform:scale(1) rotate(0deg)}}
+.logo-glow{width:130px;height:16px;margin:0 auto 4px;background:radial-gradient(ellipse,rgba(37,99,235,.25) 0%,transparent 70%);border-radius:50%;animation:glowPulse 3s ease-in-out infinite;}
+@keyframes glowPulse{0%,100%{opacity:.5;transform:scaleX(.8)}50%{opacity:1;transform:scaleX(1.1)}}
 .logo-wrap{text-align:center;margin-bottom:20px;}
-.logo-img{width:90px;height:90px;object-fit:contain;border-radius:20px;display:block;margin:0 auto;}
-.logo-placeholder{width:90px;height:90px;border-radius:20px;background:var(--blue-light);border:2px dashed #93c5fd;display:inline-flex;align-items:center;justify-content:center;flex-direction:column;gap:4px;font-size:12px;color:var(--blue);font-weight:700;text-align:center;padding:10px;}
+.logo-img{width:130px;height:130px;object-fit:contain;border-radius:24px;display:block;margin:0 auto;animation:logoFloat 3s ease-in-out infinite,logoIn .6s cubic-bezier(.32,2,.6,1) both;}
+.logo-placeholder{width:130px;height:130px;border-radius:20px;background:var(--blue-light);border:2px dashed #93c5fd;display:inline-flex;align-items:center;justify-content:center;flex-direction:column;gap:4px;font-size:12px;color:var(--blue);font-weight:700;text-align:center;padding:10px;}
 .reg-title{font-size:24px;font-weight:900;color:var(--text);text-align:center;line-height:1.3;margin-bottom:6px;}
 .reg-sub{font-size:13px;color:var(--muted);text-align:center;margin-bottom:16px;font-weight:600;}
 .badge-row{display:flex;justify-content:center;gap:8px;margin-bottom:24px;flex-wrap:wrap;}
@@ -133,7 +137,7 @@ body{font-family:var(--fc);background:#0f172a;min-height:100vh;display:flex;just
 
   <div id="scr-reg" class="screen active">
     <div class="logo-wrap">
-      <img class="logo-img" src="logo.PNG" alt="Logo"
+      <img class="logo-img" src="logo.png" alt="Logo"
         onerror="this.style.display='none';document.getElementById('logo-ph').style.display='inline-flex'">
       <div class="logo-placeholder" id="logo-ph" style="display:none;">
         <span style="font-size:24px;">📷</span><span>Логоңыз</span>
@@ -218,7 +222,7 @@ body{font-family:var(--fc);background:#0f172a;min-height:100vh;display:flex;just
 <div id="confetti"></div>
 
 <script>
-var WA_NUMBER = '77477520784';
+var WA_NUMBER = '77073062674';
 var GOOGLE_URL = 'https://script.google.com/macros/s/AKfycbzeDIFMbkxuAf8n1lxXgIuSeHBZnWiLjYBgMx4U4wgbN987Z2bPXtVgHzniSVMGUJLPgw/exec';
 
 /* ── CANVAS BG ── */
